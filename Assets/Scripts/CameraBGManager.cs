@@ -21,7 +21,8 @@ public class CameraBGManager : MonoBehaviour
     public Color startColor;
     public Color targetColor;
 
-    public float changerSpeed = 10;
+    public float changerSpeed = .5f;
+    public float targetSpeed = 1f;
 
     public Camera camera;
     // Use this for initialization
@@ -35,6 +36,8 @@ public class CameraBGManager : MonoBehaviour
     {
         if (Time.timeSinceLevelLoad < .5f) return;
         camera.backgroundColor = Color.Lerp(camera.backgroundColor, targetColor, changerSpeed * Time.deltaTime);
+        changerSpeed = Mathf.Lerp(changerSpeed, targetSpeed, .007f * Time.deltaTime);
+        
     }
 
     public void SetStartColor()

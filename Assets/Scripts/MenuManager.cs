@@ -11,11 +11,13 @@ public class MenuManager : MonoBehaviour
     public GameObject nextSceneObject;
     AsyncOperation scene;
     private bool loading = false;
+    public GameObject player;
     public void NextSceneGame(int BlackOrWhite)
     {
         if (Time.timeSinceLevelLoad < .5f) return;
         if (loading) return;
         loading = true;
+        Destroy(player);
         Vector2 pos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
         nextSceneObject.transform.position = myCanvas.transform.TransformPoint(pos);

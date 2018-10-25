@@ -231,8 +231,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 0}
   targetColor: {r: 0, g: 0, b: 0, a: 0}
-  changerSpeed: 0.8
-  camera: {fileID: 0}
+  changerSpeed: 0.2
+  targetSpeed: 1
+  camera: {fileID: 362925825}
 --- !u!1 &550752135
 GameObject:
   m_ObjectHideFlags: 0
